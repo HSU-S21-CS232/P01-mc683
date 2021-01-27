@@ -129,5 +129,3 @@ dmypy.json
 .pyre/
 
 # atom being weird
-.atom
-node_modules/
