@@ -19,7 +19,7 @@ for job_elem in job_elems:
     location_elem = job_elem.find('div', class_='location')
     if None in (title_elem, company_elem, location_elem):  #this was important because we keep running into an error dealing with no values.
         continue
-    print(title_elem.text.strip())  #using strip on these to eliminate a lot of white space.
+    print(title_elem.text.strip())  #using .strip() on these to eliminate a lot of white space.
     print(company_elem.text.strip())
     print(location_elem.text.strip())
     print()
