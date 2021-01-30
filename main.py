@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://www.monster.com/jobs/search/?q=software-engineer&where=San-Francisco__2C-CA&intcid=skr_navigation_nhpso_searchMain'
+job = input('Please select a job. If it is two words then put a hyphen in between: ')
+URL = f'https://www.monster.com/jobs/search/?q={job}&where=San-Francisco__2C-CA&intcid=skr_navigation_nhpso_searchMain'
 page = requests.get(URL)
 
 # using bs4 to parse the above url content. results variable to locate the html that houses all the jobs
