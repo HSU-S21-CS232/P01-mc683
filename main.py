@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 job = input('Please enter a job to search for. If it is two words then put a hyphen in between: ')
 where = input('What city would you like to work? If there is a space then please insert a hyphen: ')
@@ -13,13 +14,19 @@ results = soup.find(id= 'ResultsContainer')
 
 # job_elems finds all the sections that have job info. For loop to go through whole page of jobs.
 job_elems = results.find_all('section', class_='card-content')
-for job_elem in job_elems:
-    title_elem = job_elem.find('h2', class_='title')
-    company_elem = job_elem.find('div', class_='company')
-    location_elem = job_elem.find('div', class_='location')
-    if None in (title_elem, company_elem, location_elem):  #this was important because we keep running into an error dealing with no values.
-        continue
-    print(title_elem.text.strip())  #using .strip() on these to eliminate a lot of white space.
-    print(company_elem.text.strip())
-    print(location_elem.text.strip())
-    print()
+
+with open('data.csv', 'w', newline='') as csvfile:
+    csv_writer = csv.writer(csvfile)
+    header_row = ['Tilte', 'Company', 'Location']
+    csv_writer.writerow(header_row)
+
+    #spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
+    #spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+    for job_elem in job_elems:
+        title_elem = job_elem.find('h2', class_='title')
+        company_elem = job_elem.find('div', class_='company')
+        location_elem = job_elem.find('div', class_='location')
+        if None in (title_elem, company_elem, location_elem):  #this was important because we keep running into an error dealing with no values.
+            continue
+        data_row = [title_elem.text.strip(), company_elem.text.strip(), location_elem.text.strip()]
+        csv_writer.writerow(data_row)
