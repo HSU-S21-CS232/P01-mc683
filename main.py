@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-job = input('Please enter a job to search for. If it is two words then put a hyphen in between: ')
-where = input('What city would you like to work? If there is a space then please insert a hyphen: ')
+job = input('Please enter a job to search for. Replace spaces with hyphens: ')
+where = input('What city would you like to work? Replace spaces with hyphens: ')
 state = input('Two characters for the state.')
 URL = f'https://www.monster.com/jobs/search/?q={job}&where={where}__2C-{state.upper()}&intcid=skr_navigation_nhpso_searchMain'
 page = requests.get(URL)
