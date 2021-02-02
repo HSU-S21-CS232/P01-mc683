@@ -17,7 +17,7 @@ job_elems = results.find_all('section', class_='card-content')
 
 with open('data.csv', 'w', newline='') as csvfile:
     csv_writer = csv.writer(csvfile)
-    header_row = ['Tilte', 'Company', 'Location']
+    header_row = ['Title', 'Company', 'Location']
     csv_writer.writerow(header_row)
 
     #spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
@@ -26,6 +26,7 @@ with open('data.csv', 'w', newline='') as csvfile:
         title_elem = job_elem.find('h2', class_='title')
         company_elem = job_elem.find('div', class_='company')
         location_elem = job_elem.find('div', class_='location')
+        #time_post_elem = job_elem.find('time', datetime_='2017-05-26T12:00')
         if None in (title_elem, company_elem, location_elem):  #this was important because we keep running into an error dealing with no values.
             continue
         data_row = [title_elem.text.strip(), company_elem.text.strip(), location_elem.text.strip()]
