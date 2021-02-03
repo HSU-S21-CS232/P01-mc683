@@ -26,8 +26,11 @@ with open('data.csv', 'w', newline='') as csvfile:
         title_elem = job_elem.find('h2', class_='title')
         company_elem = job_elem.find('div', class_='company')
         location_elem = job_elem.find('div', class_='location')
+        url_elem = job_elem.find('a')
+        if url_elem != None:
+            href = url_elem['href']
         #time_post_elem = job_elem.find('time', datetime_='2017-05-26T12:00')
-        if None in (title_elem, company_elem, location_elem):  #this was important because we keep running into an error dealing with no values.
+        if None in (title_elem, company_elem, location_elem, href):  #this was important because we keep running into an error dealing with no values.
             continue
-        data_row = [title_elem.text.strip(), company_elem.text.strip(), location_elem.text.strip()]
+        data_row = [title_elem.text.strip(), company_elem.text.strip(), location_elem.text.strip(), href.strip()]
         csv_writer.writerow(data_row)
