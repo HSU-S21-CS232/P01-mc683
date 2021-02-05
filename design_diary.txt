@@ -1,5 +1,5 @@
-  The main strugle that I encountered when first starting this project was that I had to translate one semester worth of C++ knowledge into Python. Although it was "easier" and more
-close to being a language that you can read and get the idea, I found myself not really appreciating that as much as I thought I would. Though as I got more accustumed to using 
+  The main struggle that I encountered when first starting this project was that I had to translate one semester worth of C++ knowledge into Python. Although it was "easier" and more
+close to being a language that you can read and get the idea, I found myself not really appreciating that as much as I thought I would. Though as I got more accustomed to using 
 it I was able to see the appeal. One of the issues that I was not able to figure out currently was when it came to excluding certain text. My original idea was to grab
 jobs off of indeed, which has more information about the job and salary, but I was not able to grab the title of the job without also grabbing a subtext that said "new" for
 all jobs that happend to be freshly place on indeed. My work around that was to just not use indeed and to go with monster.com which has a bit of a simpler page to grab the
