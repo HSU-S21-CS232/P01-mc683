@@ -15,6 +15,6 @@ run the code which will then prompt you to:
 2. Enter a city
 3. Enter a state
 
-After that it will create a csv file in the same location that the that you have pulled this information to.
+After that it will create a csv file in the same location that you created this file in.
 Then from there you can use google sheets and upload that csv file and you will have the jobs
 listed in each cell in the appropriate categories as well as the links to them so you can apply.
