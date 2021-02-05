@@ -8,6 +8,13 @@ pip install csv
 ```
 
 # How to use
+If you are not copying my script file directly then on 
+top of your .py file this is the proper import structure:
+```
+import requests
+from bs4 import BeautifulSoup
+import csv
+```
 After installing the libraries all that you have to do is
 run the code which will then prompt you to:
 
