@@ -18,3 +18,6 @@ run the code which will then prompt you to:
 After that it will create a csv file in the same location that you created this file in.
 Then from there you can use google sheets and upload that csv file and you will have the jobs
 listed in each cell in the appropriate categories as well as the links to them so you can apply.
+
+
+![](p01.gif)
